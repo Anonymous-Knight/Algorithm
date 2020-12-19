@@ -11,3 +11,4 @@ class Solution:
                 nums[i] = nums[j]
         return i + 1
 # 疏漏的地方：没有考虑极限情况：数组长度为0时的逻辑，虽然恰好能用
+# 时间复杂度O(N)，空间复杂度O(1)
