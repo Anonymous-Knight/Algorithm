@@ -10,7 +10,7 @@ class Solution:
         for i in range(k):
             x = nums[length - 1]
             for j in range(length - 1, 0, -1):
-                nums[j] = nums[j - 1]
+                nums[j] = nums[j - 1]  
             nums[0] = x
 # 疏漏：range用得不够熟，对边界条件有疏忽；时间复杂度过大，有O(kN)
 # 进行优化：一次将元素的位置确定，而不是逐一移位，可达到O(N)，每个元素刚好移动一次
@@ -36,3 +36,5 @@ class Solution:
                 if curr_idx == start:
                     start += 1  # 从start出发又回到了start，如果count小于n则从start+1处继续开始
                     break
+# 按(curr_id +k)%n的分组，不同分组互不干扰，每个分组移动完毕的标志是回到起始点
+# 对下一分组进行移动只需更改起始点
